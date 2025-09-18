@@ -6,6 +6,10 @@ const register = async (req, res) => {
   try {
     const { name, email, mobile, gender, password } = req.body;
 
+    if (!name || !email || !mobile || !gender || !password) {
+      return res.status(400).json({ message: "Please fill all the fields"});
+    }
+
     const existing = await prisma.user.findFirst({
       where: { OR: [{ email }, { mobile }] },
     });
@@ -26,9 +30,14 @@ const register = async (req, res) => {
   }
 };
 
+
 const login = async (req, res) => {
   try {
     const { emailOrMobile, password } = req.body;
+
+    if(!emailOrMobile || !password){
+       return res.status(400).json({ message: "Please fill all the fields"});
+    }
 
     const user = await prisma.user.findFirst({
       where: { OR: [{ email: emailOrMobile }, { mobile: emailOrMobile }] },
@@ -46,6 +55,7 @@ const login = async (req, res) => {
   }
 };
 
+// DEMO API for TEST------------------
 const me = async (req, res) => {
   try {
     const user = await prisma.user.findUnique({
