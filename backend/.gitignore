@@ -24,3 +24,6 @@ coverage/
 .vscode/
 .idea/
 *.swp
+
+# Prisma migrations (ignore generated migrations if you don’t want them in repo)
+prisma/migrations/

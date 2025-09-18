@@ -1,81 +1,61 @@
-const bcrypt = require("bcrypt");
+const prisma = require("../db/prisma");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const {
-  findUserByEmail,
-  findUserByMobile,
-  findUserById,
-  createUser,
-  findUserByEmailOrMobile,
-} = require("../models/userModel");
-const { validateRegister, validateLogin } = require("../utils/validators");
 
-const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS || "10", 10);
-const jwtSecret = process.env.JWT_SECRET || "secret";
-const jwtExpiresIn = process.env.JWT_EXPIRES_IN || "7d";
-
-async function register(req, res) {
+const register = async (req, res) => {
   try {
-    const { errors, valid } = validateRegister(req.body);
-    if (!valid) return res.status(400).json({ ok: false, errors });
+    const { name, email, mobile, gender, password } = req.body;
 
-    const { name, email, mobile_number, gender, password } = req.body;
+    const existing = await prisma.user.findFirst({
+      where: { OR: [{ email }, { mobile }] },
+    });
+    if (existing) return res.status(400).json({ message: "User already exists" });
 
-    const existing = await findUserByEmailOrMobile(email, mobile_number);
-    if (existing) {
-      return res.status(400).json({ ok: false, message: "Email or mobile already exists" });
-    }
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    const password_hash = await bcrypt.hash(password, saltRounds);
-    const user = await createUser({ name, email, mobile_number, gender, password_hash });
+    const user = await prisma.user.create({
+      data: { name, email, mobile, gender, password: hashedPassword },
+    });
 
-    return res.status(201).json({ ok: true, user });
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ ok: false, message: "Server error" });
-  }
-}
-
-async function login(req, res) {
-  try {
-    const { errors, valid } = validateLogin(req.body);
-    if (!valid) return res.status(400).json({ ok: false, errors });
-
-    const { identifier, password } = req.body;
-    let user;
-
-    if (identifier.includes("@")) {
-      user = await findUserByEmail(identifier);
-    } else {
-      user = await findUserByMobile(identifier);
-    }
-
-    if (!user) return res.status(400).json({ ok: false, message: "Invalid credentials" });
-
-    const match = await bcrypt.compare(password, user.password_hash);
-    if (!match) return res.status(400).json({ ok: false, message: "Invalid credentials" });
-
-    const token = jwt.sign({ id: user.id }, jwtSecret, { expiresIn: jwtExpiresIn });
-
-    return res.json({
-      ok: true,
-      token,
-      user: { id: user.id, name: user.name, email: user.email, mobile_number: user.mobile_number, gender: user.gender },
+    res.status(201).json({
+      message: "User registered successfully",
+      user: { id: user.id, email: user.email, mobile: user.mobile },
     });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ ok: false, message: "Server error" });
+    res.status(500).json({ error: err.message });
   }
-}
+};
 
-async function me(req, res) {
+const login = async (req, res) => {
   try {
-    const user = await findUserById(req.userId);
-    if (!user) return res.status(404).json({ ok: false, message: "User not found" });
-    return res.json({ ok: true, user });
+    const { emailOrMobile, password } = req.body;
+
+    const user = await prisma.user.findFirst({
+      where: { OR: [{ email: emailOrMobile }, { mobile: emailOrMobile }] },
+    });
+    if (!user) return res.status(400).json({ message: "Invalid credentials" });
+
+    const isValid = await bcrypt.compare(password, user.password);
+    if (!isValid) return res.status(400).json({ message: "Invalid credentials" });
+
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+
+    res.json({ message: "Login successful", token });
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ ok: false, message: "Server error" });
+    res.status(500).json({ error: err.message });
   }
-}
+};
+
+const me = async (req, res) => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.user.id },
+      select: { id: true, name: true, email: true, mobile: true, gender: true },
+    });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 module.exports = { register, login, me };
