@@ -1,0 +1,152 @@
+.parent_box {
+  margin: 0 20px;
+  border-radius: 20px;
+  padding: 3px; /* space for border */
+  background: linear-gradient(to right, #383400, #01243b); /* gradient border */
+}
+
+/* Inner banner box */
+.parent_box .home_banner {
+  min-height: 200px;
+  height: 280px;
+  border-radius: 20px;
+  position: relative;
+  background: #0f2930; /* inner background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image */
+.parent_box .home_banner .image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.parent_box .home_banner .image img {
+  width: 240px;
+  height: auto;
+  max-width: 40vw;  /* responsive scaling */
+  object-fit: contain;
+}
+
+/* Buttons */
+.parent_box .home_banner .btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* stack on small screens */
+}
+
+.parent_box .home_banner .btn button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.3s;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.parent_box .home_banner .btn button img{
+  width: 20px ;
+  height: 20px;
+}
+
+.parent_box .home_banner .btn .silver_btn{
+  background: #3E5151;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.parent_box .home_banner .btn .gold_btn{
+  background: #CAC531;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F3F9A7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.parent_box .home_banner .btn button:hover {
+  opacity: 0.85;
+}
+
+/* ✅ Responsive Breakpoints */
+@media (max-width: 992px) {
+  .parent_box {
+    margin: 0 15px;
+  }
+
+  .parent_box .home_banner {
+    height: 240px;
+  }
+
+  .parent_box .home_banner .image img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parent_box .home_banner {
+    height: 220px;
+    justify-content: flex-end;
+  }
+
+  .parent_box .home_banner .image img {
+    width: 160px;
+  }
+
+  .parent_box .home_banner .btn {
+    right: 10px;
+    bottom: 10px;
+    gap: 10px;
+  }
+
+  .parent_box .home_banner .btn button {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent_box .home_banner {
+    height: auto;
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .parent_box .home_banner .image {
+    position: static;
+    margin-bottom: 15px;
+  }
+
+  .parent_box .home_banner .image img {
+    width: 140px;
+    max-width: 70%;
+  }
+
+  .parent_box .home_banner .btn {
+    position: static;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .parent_box .home_banner .btn button {
+    width: 129px;
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}

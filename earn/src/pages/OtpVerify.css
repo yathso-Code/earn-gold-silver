@@ -1,0 +1,163 @@
+/* Main container */
+.login_main_box {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ✅ vertical centering */
+  align-items: center;       /* ✅ horizontal centering */
+  background: linear-gradient(
+    223deg,
+    rgba(24, 34, 38, 0.9) 55%,
+    rgba(8, 60, 64, 1) 100%
+  );
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Logo top-left */
+.login_top_text .login_img {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(41, 40, 40, 0.63);
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.login_top_text .login_img img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Heading text */
+.login_input_text h1 {
+  font-size: 1.6rem;
+  margin-bottom: 20px; /* only spacing, no vertical centering hack */
+  color: #fff;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* OTP input */
+.login_input_box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.login_input_box .input_box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: #fff;
+
+  /* Gradient border */
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(90deg, #0f7a65, #0c7392);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.login_input_box .input_box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 8px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Verify Button */
+.send_otp_btn {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto 10px;
+}
+
+.send_otp_btn button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff4e50, #f9d423);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.send_otp_btn button:hover {
+  opacity: 0.9;
+  background: linear-gradient(90deg, #581b1c, #6e5f0f);
+}
+
+/* Timer box */
+.timer_box {
+  text-align: center;
+  
+}
+
+.timer_box p{
+  font-size: 14px;
+  color: #fff;
+}
+
+.timer_box span {
+  color: #f9d423;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .login_input_text h1 {
+    font-size: 1.3rem;
+  }
+
+  .login_input_box .input_box input {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  .send_otp_btn button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login_input_text h1 {
+    font-size: 1rem;
+  }
+
+  .login_input_box .input_box {
+    padding: 10px 15px;
+  }
+
+  .login_input_box .input_box input {
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
+
+  .send_otp_btn button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .timer_box {
+    font-size: 12px;
+  }
+}

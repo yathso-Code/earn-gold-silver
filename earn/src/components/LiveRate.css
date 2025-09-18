@@ -1,0 +1,117 @@
+/* Main container */
+.live_rate_section {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background: transparent;
+}
+
+/* Title */
+.live_rate_section .title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: white; 
+}
+
+/* Cards container */
+.live_cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Card style */
+.card {
+  flex: 1;
+  min-width: 240px;
+  max-width: 520px;
+  padding: 9px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.9);
+}
+
+/* Silver style */
+.card.silver {
+  background: linear-gradient(294deg, #848484, #636262);
+  color: #ecebeb;
+  border: 2px solid #dcdcdc;
+}
+
+.card .silver_img_name,.gold_img_name {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.card.silver .silver_img_name img {
+  width: 41px;
+  height: 41px;
+}
+
+.card.gold .gold_img_name img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Gold style */
+.card.gold {
+  background: linear-gradient(207deg, #2e290c, #dba92e);
+  color: #ecebeb;
+  border: 2px solid #ffec8b;
+}
+
+/* Texts */
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card .price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.card .change {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card .change.up {
+  color: #00ff6a;
+}
+
+.card .change.down {
+  color: #ff3c3c;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .live_rate_section .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 20px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .live_cards {
+    /* flex-direction: column; */
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

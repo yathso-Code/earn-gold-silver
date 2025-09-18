@@ -1,0 +1,169 @@
+/* Main container */
+.login_main_box {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(223deg, rgba(24, 34, 38, 0.9) 55%, rgba(8, 60, 64, 1) 100%);
+  padding: 1px 20px;
+  box-sizing: border-box;
+  position: relative; /* required for absolute positioning of children */
+}
+
+.login_top_text .login_img {
+  padding: 10px 20px;
+  background-color: rgba(41, 40, 40, 0.63);
+  border-radius: 12px;
+  position: absolute;
+  top: 5px;   /* stick to top */
+  left: 15px;  /* stick to left */
+}
+
+.login_top_text .login_img img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Banner image */
+.login_main_box .login_banner_image {
+  width: 100%;
+  margin-top: 80px; /* extra space below logo */
+}
+
+.login_main_box .login_banner_image img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Input section */
+.login_input_text h1 {
+  font-size: 1.4rem;
+  margin: 25px 0 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.login_input_box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.login_input_box .input_box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 15px;
+  border-radius: 50px;
+  background: #fff;
+
+  /* Gradient border */
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+                    linear-gradient(90deg, #0f7a65, #0c7392);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.login_input_box .input_box h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.login_input_box .input_box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 5px;
+  color: #222;
+}
+
+/* OTP button */
+.send_otp_btn {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto 0;
+}
+
+.send_otp_btn button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+   background: linear-gradient(120deg,  #3a2e0d, #28024b);
+  color: #fff;
+  transition: 0.3s;
+}
+
+.send_otp_btn button:hover {
+  opacity: 0.9;
+  background: linear-gradient(90deg, #581b1c, #6e5f0f);
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* Bottom text */
+.bottom_text {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.bottom_text p {
+  font-size: 12px;
+}
+
+
+.bottom_text span {
+  color: #f9d423;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .login_input_text h1 {
+    font-size: 1.2rem;
+  }
+
+  .login_main_box .login_banner_image img {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login_input_box .input_box {
+    gap: 10px;
+    padding: 8px 12px;
+  }
+
+  .login_input_box .input_box h1 {
+    font-size: 14px;
+  }
+
+  .login_input_box .input_box input {
+    font-size: 14px;
+  }
+
+  .send_otp_btn button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .bottom_text {
+    font-size: 12px;
+    bottom: 10px;
+  }
+}

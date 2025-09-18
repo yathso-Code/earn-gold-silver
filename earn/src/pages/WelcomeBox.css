@@ -1,0 +1,99 @@
+/* Container with full screen height */
+.welcome_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Box styling */
+.welcome_box {
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  color: #fff;
+   background: transparent; /* No background box shadow */
+  box-shadow: none; /* 🚫 Remove shadow */
+}
+
+/* Icon */
+.icon_area span {
+  font-size: 40px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 14px;
+  color: #9f9fff;
+  margin-bottom: 20px;
+}
+
+/* Divider */
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 20px 0;
+}
+
+/* Bottom text */
+.bottom_area {
+  margin-bottom: 20px;
+}
+
+.bottom_title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.bottom_desc {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+/* Button */
+.cta_btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(120deg,  #3a2e0d, #28024b);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+    box-shadow: none; /* 🚫 No shadow */
+}
+
+.cta_btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+  .subtitle,
+  .bottom_desc {
+    font-size: 13px;
+  }
+  .cta_btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

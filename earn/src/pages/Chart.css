@@ -1,0 +1,86 @@
+.chart_main_box {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 800px; /* centers chart nicely */
+  border-radius: 12px;
+  background: #44A08D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #093637, #265a50);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #093637, #23534a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.text_in_chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.text_in_chart .label {
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+}
+
+.text_in_chart .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #dbdbdb;
+}
+
+.text_in_chart .timeframe {
+  font-size: 12px;
+  color: #e0dfdf;
+}
+
+.chart_box {
+  width: 100%;
+  height: 300px; /* ResponsiveContainer will fill this */
+}
+
+.btn_box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_box button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn_box button:hover {
+  background: linear-gradient(to right, #005f73, #0a9396);
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 600px) {
+  .chart_main_box {
+    padding: 6px;
+    margin: 20px;
+  }
+
+  .text_in_chart {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .chart_box {
+    height: 250px;
+  }
+
+  .btn_box button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 30px;
+  }
+}

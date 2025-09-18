@@ -1,0 +1,244 @@
+/* Wrapper for center alignment */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main container */
+.savegold_container {
+  max-width: 450px;
+  width: 100%;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  color: #dbdbdb;
+}
+
+/* Banner */
+.banner {
+  background: linear-gradient(135deg, #ff9800, #e65100);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Input Section */
+.input_section {
+  margin-bottom: 20px;
+}
+
+.input_box {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.input_box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #e2e2e2;
+  font-size: 18px;
+  margin: 0 8px;
+  outline: none;
+}
+
+.currency {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.grams {
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Quick Buttons */
+.quick_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.quick_buttons button {
+  flex: 1;
+  min-width: 70px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #333;
+  border: none;
+  color: #dfdada;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quick_buttons button:hover {
+  background: #444;
+}
+
+/* Coupon Box */
+.coupon_box {
+  background: #1b3c1ba8;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coupon_text {
+  font-size: 14px;
+}
+
+.remove_btn {
+  background: transparent;
+  border: none;
+  color: #ff5c5c;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Payment Box */
+.payment_box {
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c53648f, #203a43a9, #0f202798);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c5364a8, #203a43b4, #0f2027b2); 
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.pay_method {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.upi_balance {
+  color: #9f9fff;
+}
+
+.pay_btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #0052D4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #dddcdc;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pay_btn span {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .savegold_container {
+    padding: 15px;
+  }
+
+  .pay_btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .coupon_text {
+    font-size: 12px;
+  }
+}
+
+/* Live Gold Rate Box */
+.live_rate_box {
+  background: #222;
+  border: 1px solid #ff9800;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.live_rate_box p {
+  margin: 0;
+  font-size: 14px;
+  color: #ffb84d;
+  font-weight: 600;
+}
+
+.live_rate_box span {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #dddcdc;
+}
+
+/* UPI Selection */
+.upi_title {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #d4d3d3;
+  font-weight: 600;
+}
+
+.upi_grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.upi_card {
+  flex: 1;
+  min-width: 90px;
+  max-width: 110px;
+  background: #2a2a2a;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.upi_card img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.upi_card span {
+  font-size: 13px;
+  color: #ddd;
+}
+
+.upi_card:hover {
+  background: #333;
+}
+
+.upi_card.active {
+  border: 2px solid #ff9800;
+  background: #3a2a1a;
+}
+
+
+

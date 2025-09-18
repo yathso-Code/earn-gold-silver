@@ -1,0 +1,131 @@
+.wallet_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 15px;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  color: #fff;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.wallet_title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #eeeeed;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Each row */
+.wallet_row {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 25px;
+}
+
+.row_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #e7e7e7;
+}
+
+/* Balance Box */
+.wallet_box1 {
+  border-radius: 18px;
+  padding: 25px 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease-in-out;
+}
+
+.wallet_box1:hover {
+  transform: translateY(-5px);
+}
+
+/* Gold theme */
+.gold_box {
+  background: #CAC531;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F3F9A7, #CAC531);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F3F9A7, #CAC531); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Silver theme */
+.silver_box {
+  background: #283048;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.wallet_value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.wallet_coin {
+  font-size: 15px;
+  color: #f0f0f0;
+}
+
+/* Button Group */
+.btn_group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.wallet_btn {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.wallet_btn.withdraw {
+  background: #ff4d4d;
+  color: white;
+}
+
+.wallet_btn.buy {
+  background: #4caf50;
+  color: white;
+}
+
+.wallet_btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .wallet_title {
+    font-size: 22px;
+  }
+
+  .row_title {
+    font-size: 16px;
+  }
+
+  .wallet_value {
+    font-size: 20px;
+  }
+
+  .btn_group {
+    flex-direction: column;
+  }
+
+  .wallet_btn {
+    width: 100%;
+  }
+}

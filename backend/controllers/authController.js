@@ -2,6 +2,7 @@ const prisma = require("../db/prisma");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+// register------------
 const register = async (req, res) => {
   try {
     const { name, email, mobile, gender, password } = req.body;

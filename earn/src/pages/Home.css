@@ -1,0 +1,20 @@
+.home_main_box {
+   margin-top: 60px;
+}
+
+.home_main_box .user_name {
+   width: 100%;
+   display: flex;
+   justify-content: start;
+   padding: 10px 30px;
+}
+
+.home_main_box .user_name h1{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.home_main_box .user_name h1 p{
+  font-size: 20px;
+  font-weight: bold;
+}

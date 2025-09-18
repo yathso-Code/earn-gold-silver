@@ -1,0 +1,165 @@
+/* Container */
+.withdraw-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding: 16px;
+}
+
+/* Card */
+.withdraw-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+}
+
+/* Title */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d8d7d7;
+  margin-bottom: 16px;
+}
+
+/* Amount Box */
+.amount-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #333;
+}
+
+.amount-box span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  margin-right: 8px;
+}
+
+.amount-box input {
+  border: none;
+  flex: 1;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  background-color: #333;
+}
+
+/* Balance Card */
+.balance-card {
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.small-text {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.big-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.tiny-text {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.balance-details {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.balance-details span {
+  font-weight: bold;
+}
+
+/* Button */
+.proceed-btn {
+  width: 100%;
+  background: #00B4DB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.proceed-btn:hover {
+  background: #00B4DB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0d4e64, #0b697e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0a6786, #054d5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* Footer Note */
+.footer-note {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .withdraw-card {
+    padding: 16px;
+  }
+
+  .big-text {
+    font-size: 20px;
+  }
+
+  .proceed-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+/* Gold Price Card */
+.gold-price-card {
+  background: #38383879; /* gold color */
+  color: #e4bd0e;
+  border-radius: 12px;
+  border: 1px solid #ff9800;
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.gold-price-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.gold-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #dddcdc;
+  margin-bottom: 4px;
+}
+

@@ -1,0 +1,63 @@
+/* Section */
+.whyEarn_section {
+  width: 100%;
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #01161e, #072f3c);
+  /* border-radius: 20px; */
+  margin: 30px auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 30px;
+}
+
+/* Title */
+.whyEarn_section .title {
+  font-size: 2rem;
+  color: #ffd700; /* gold accent */
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Content */
+.whyEarn_section .content {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #eaeaea;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Button */
+.cta_btn {
+  margin-top: 25px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  color: #222;
+  box-shadow: 0 4px 12px rgba(255, 204, 51, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta_btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffcc33, #ffb347);
+  box-shadow: 0 6px 16px rgba(255, 204, 51, 0.6);
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .whyEarn_section .title {
+    font-size: 1.6rem;
+  }
+  .whyEarn_section .content {
+    font-size: 1rem;
+  }
+  .cta_btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
